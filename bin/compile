@@ -28,9 +28,9 @@ echo "Installing libvips" | arrow
 
 cd $BUILD_DIR
 
-output_dir="${BUILD_DIR}/vendor/vips"
+output_dir="${BUILD_DIR}/vendor/vips/vips-8.4.5"
 # Output library also to temp dir accordingly to pkg-config paths
-temp_app_dir="/app/vendor/vips"
+temp_app_dir="/app/vendor/vips/vips-8.4.5"
 mkdir -p $output_dir
 mkdir -p $temp_app_dir
 
@@ -62,8 +62,8 @@ echo "\$PKG_CONFIG_PATH:/app/vendor/vips/lib/pkgconfig" > $3/PKG_CONFIG_PATH
 mkdir -p $BUILD_DIR/.profile.d
 cp -n $BP_DIR/.profile.d/* $BUILD_DIR/.profile.d/
 
-#echo ".profile.d files installed" | indent
-# source $BUILD_DIR/.profile.d/vips.sh
+echo ".profile.d files installed" | indent
+#source $BUILD_DIR/.profile.d/vips.sh
 set-default-env PKG_CONFIG_PATH "vips/lib/pkgconfig"
 set-default-env LD_LIBRARY_PATH "vips/lib"
 set-default-env LIBRARY_PATH "vips/lib"
